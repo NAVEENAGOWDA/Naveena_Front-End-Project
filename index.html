@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif; background-color:#b3ff66;}
+
+form {
+  border: 5px solid #f1f1f1;
+  font-family: Arial;
+   border-radius: 15px;
+}
+
+.container {
+  padding: 25px;
+  background-color:LightGray;
+ border-radius: 15px;  
+}
+
+input[type=text], input[type=submit] {
+  width: 50%;
+  padding: 12px;
+  margin: 15px 0;
+  display: inline-block;
+  border: 3px solid gray;
+  box-sizing: border-box;
+   border-radius: 15px;
+}
+
+input[type=checkbox] {
+  margin-top: 16px;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  border: none;
+  border-radius: 15px;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}
+
+h2{background-color: white;
+  color: blue;
+  border: 2px;}
+  h2:hover{background-color: Yellow;}
+  .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: pink;
+  float: left;
+  border:none;
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 20px;
+  transition: 0.3s;
+  font-size: 20px;
+  border: 2px solid Blue;
+
+}
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color:White;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 6px;
+  border-radius: 15px;
+  border: 2px solid red;
+  border-top:6px 6px;
+} 
+</style>
+</head>
+<body>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Home')"><b>Home</b></button>
+  <button class="tablinks" onclick="openCity(event, 'Our News papers')"><b>Our News Papers</b></button>
+  <button class="tablinks" onclick="openCity(event, 'About')"><b>About</b></button>
+</div>
+
+<div id="Home" class="tabcontent">
+  <p style="background-color:Violet;">Reading newspaper is a healthy activity for every individual & tespecially for students. As the time passes, they get full command on reading and vocabulary. Newspaper reading also improves writing & reading skills of an individual as many difficult words come while reading a passage that might confuse a reader</p>
+</div>
+
+<div id="Our News papers" class="tabcontent">
+  <p style="background-color:Violet;">1.Wolrd Star<br>
+  2.State Samachaar <br>
+  3.Peoples link<br>
+  4.International News<br>
+  5.Welcome India  </p> 
+</div>
+
+<div id="About" class="tabcontent">
+  <p style="background-color:Violet;">Our *NVN* newsletter stated at 1996. Founder is Naveen Gowda. The Main Headquar at Mandya Karnataka</p>
+</div>
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+<h2>The *NVN* Newsletter</h2>
+<p>This News letter containes all information of world</p>
+
+<form action="http://welcomeindianews.com/">
+  <div class="container">
+    <h2>Subscribe to our Newsletter</h2>
+    <p><b>Please subcribe to our news letter we will provide 75% offer for 1 st login
+	<h6 style="color:red;"><i>Instructions:<br></i>1.Your name should be Capital letter<br>
+	2.To ensure email Id is proper pattern</b></p><h6>
+  </div>  
+  <div class="container" style="background-color:white">
+    <input type="text" placeholder="Name" name="name" pattern="[A-Z]{ }" required>
+    <input type="text" placeholder="Mobile Number" name="mail" pattern="[6789][0-9]{9}" required>
+	<input type="text" placeholder="Email address" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+    <label>
+    <br><input type="checkbox" checked="checked" name="subscribe" required> All information correct.
+    </label>
+	
+  </div>
+  <div class="container">
+    <input type="submit" value="Sign-Up">
+  </div>
+  
+</form>
+   
+</body>
+</html>
